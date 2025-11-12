@@ -12,17 +12,16 @@
   gap: 4rem;
   justify-content: center;
   padding: 4rem;
+
 }
 
 .card {
   border-radius: 16px;
   width: fit-content;
   margin-top: 164px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   box-shadow: 8px 8px 20px 0px rgba(85, 85, 85, 0.08);
   background-color: #ffffff;
-
   figure {
     padding: 16px;
   }
@@ -67,21 +66,5 @@
     border-radius: 16px;
     font-size: 0.625rem;
     font-weight: 600;
-  }
-  .creator {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 20px;
-    line-height: 2rem;
-    vertical-align: bottom;
-    font-size: 0.75rem;
-    color: #394150aa;
-  }
-
-  hr {
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #39415011;
   }
 }
