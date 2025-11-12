@@ -1,0 +1,23 @@
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'home/css/article.css' %}" />
+  <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}" />
+</head>
+<h2>Lista de Productos</h2>
+<div class="card-container">
+  {% for product in products %}
+  <article class="card">
+    <img
+      src="{{product.image.url}}"
+      alt="imagen del {{product.name}}"
+      height="256px"
+    />
+    <div class="tag">{{product.category}}</div>
+    <div>
+      <h2>{{product.name}}</h2>
+      <div class="price mt-1">${{product.cost}}</div>
+      <p>{{product.description}}</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>

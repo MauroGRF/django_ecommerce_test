@@ -1,0 +1,73 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'home/css/navbar.css' %}" />
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-chart-cohort"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 9h18v-6h-18v18h6v-18" />
+          <path d="M3 15h12v-12" />
+        </svg>
+      </div>
+      <span class="logo-text">PixelShop</span>
+    </a>
+
+    <details class="">
+      <summary>Categorias</summary>
+      {% for category in links %}
+      <a href="{{ category.get_url }}"
+        >{{category.title}}</a
+      >
+      {% endfor %}
+    </details>
+
+    <div class="search-bar">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="¿What are ya lookin' for?"
+      />
+      <button
+        class="search-btn btn"
+        type="button"
+        id="searchBtn"
+        onclick="attachSearch()"
+      >
+        <span class="search-icon">🔍</span>
+      </button>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+      <li><a href="{% url 'store:main'%}" class="nav-link">Tienda</a></li>
+      <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      <div class="nav-buttons">
+        <a href="#login" class="btn btn-login">Login</a>
+        <a href="#registro" class="btn btn-register">Registro</a>
+      </div>
+    </ul>
+  </div>
+</nav>
+
+<div class="content">
+  <h1>Welcome to PixelShop</h1>
+  <p>Sprites, GFX and others 2D pixel resources</p>
+</div>

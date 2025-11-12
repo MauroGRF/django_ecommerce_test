@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</i></title>
+    <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}" />
+  </head>
+  <body>
+    {% include "home/includes/navbar.html" %}
+    {% include "home/ListArticles.html" %}
+    {% include "home/includes/footer.html" %}
+    <script src="{% static 'home/js/home.js' %}"></script>    
+  </body>
+</html>
+  
