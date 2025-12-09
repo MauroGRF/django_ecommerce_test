@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from django.contrib.messages import constants as messages
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +28,11 @@ SECRET_KEY = "django-insecure-cq5=p)zb#m)rl)6)pm^2rw%cuzzz257e%l@l6nj8zfrxddberh
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]  
+
+MESSAGE_TAGS = {
+    messages.INFO: "",
+    50: "critical",
+}
 
 
 # Application definition
@@ -267,3 +274,12 @@ JAZZMIN_SETTINGS = {
 
 MEDIA_URL= "media/" #Creacion de carpeta media
 MEDIA_ROOT= BASE_DIR / "media/" #Raiz del proyecto
+#Activación SMTP
+
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "mauriciorodriguez28633@gmail.com"
+EMAIL_HOST_PASSWORD = "ldpx pymd wsak dder"
+EMAIL_USE_TLS= True
+DEFAULT_FROM_EMAIL= "mauriciorodriguez28633@gmail.com"

@@ -60,8 +60,13 @@
       <li><a href="{% url 'store:main'%}" class="nav-link">Tienda</a></li>
       <li><a href="#contacto" class="nav-link">Contacto</a></li>
       <div class="nav-buttons">
-        <a href="#login" class="btn btn-login">Login</a>
-        <a href="#registro" class="btn btn-register">Registro</a>
+        {% if user.id is None %}
+        <a href="{% url 'auths:login' %}" class="btn btn-login">Login</a>
+        <a href="{% url 'auths:signin' %}" class="btn btn-register">Registro</a>
+        {% else %}
+        <a href=""> {{user.nombre}} </a>
+        <a href="{% url 'auths:logout' %}" class="btn btn-login" style="background-color: chocolate; color:azure;">Cerrar sesión</a>
+        {% endif %}
       </div>
     </ul>
   </div>

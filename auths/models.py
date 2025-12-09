@@ -62,7 +62,9 @@ class UserAuth(AbstractBaseUser, PermissionsMixin):  # Agrega PermissionsMixin
 
     def has_module_perms(self, app_label):
         return True
-
+    
+    
+    
     class Meta:
         verbose_name = "Usuario"
         verbose_name_plural = "Usuarios"
